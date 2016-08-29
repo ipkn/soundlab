@@ -12,35 +12,20 @@ struct User
 {
     static int global_id;
     int id;
-	double x;
-	double y;
-	char key_state;
+    double x;
+    double y;
+    char key_state;
     User() : id(global_id++){ }
 };
 int User::global_id;
 
-struct BulletUpdate
-{
-	int x;
-	int y;
-	int vx;
-	int vy;
-};
-
-struct UserUpdate
-{
-	int x;
-	int y;
-	char key_state;
-};
-
 struct Note
 {
-	int x;
-	int y;
+    int x;
+    int y;
     int r;
     std::chrono::high_resolution_clock::time_point life;
-	int note; // 26-87
+    int note; // 26-87
 };
 
 
@@ -50,9 +35,9 @@ int main()
 
     std::mutex mtx;;
     std::unordered_map<crow::websocket::connection*, std::unique_ptr<User>> users;
-	std::vector<Note> notes;
+    std::vector<Note> notes;
 
-	crow::logger::setLogLevel(crow::LogLevel::Critical);
+    crow::logger::setLogLevel(crow::LogLevel::Critical);
 
     CROW_ROUTE(app, "/ws")
         .websocket()
@@ -137,7 +122,7 @@ int main()
         }
     });
 
-	crow::mustache::set_base("..");
+    crow::mustache::set_base("..");
     CROW_ROUTE(app, "/static/<path>")
 	([](const std::string& filename){
         auto page = crow::mustache::load_text("static/" + filename);

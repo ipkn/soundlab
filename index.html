@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf8">
+    <script src="static/MIDI.js"></script>
+    <script src="static/inc/shim/Base64.js"></script>
+    <script src="static/inc/shim/Base64binary.js"></script>
+    <script src="static/inc/shim/WebAudioAPI.js"></script>
+    <script src="static/inc/shim/WebMIDIAPI.js"></script>
+    <script src="static/sc.js"></script>
+    <script src="static/md5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<style>
+body {
+    margin:0;
+    padding:0;
+	user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+}
+</style>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+    <body>
+        <div id="loading" style="display:none; text-align:center; position:absolute; left:0;top:0;width:100%;height:100%;line-height:100%;">
+            <i class="fa fa-circle-o-notch fa-spin" style="font-size:200px;color:skyblue"></i>
+        </div>
+        <div style="position:absolute;left:120px;top:20px;">
+            <h5>
+                crow websocket example
+            </h5>
+            <h6>
+                wsad to move<BR>
+            click and hold to fire
+            </h6>
+        </div>
+		<div style="position:absolute; top:500px; left:120px">
+			src: <a href="https://github.com/ipkn/soundlab">github.com/ipkn/soundlab</a>
+		</div>
+
+
+        <script src="static/main.js"></script>
+
+    </body>
+</html>
